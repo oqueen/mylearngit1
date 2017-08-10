@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			#wrap{
+				width: 300px;
+				height: 500px;
+				border: 1px solid black;
+				margin: 0 auto;
+			}
+			.country{
+				width: 280px;
+				height: 30px;
+				margin-left: 10px;
+				margin-top: 10px;
+				border: 1px solid blue;
+				outline: 0;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+		</div>
+		<script type="text/javascript">
+			var oWrap = document.getElementById("wrap");
+			var oCountry = document.createElement("input");
+			var oProvince = document.createElement("input");
+			var oCity = document.createElement("input");
+			var oArea = document.createElement("input");
+			oWrap.appendChild(oCountry);
+			oCountry.value = "国家";
+			oCountry.className = "country";
+			oCountry.onclick = function(){
+				if(oProvince.parentNode != oWrap){
+					oWrap.appendChild(oProvince);
+					oProvince.className = "country";
+					oProvince.value = "省份";
+				}
+			}
+			oProvince.onclick = function(){
+				if(oCity.parentNode != oWrap){
+					oWrap.appendChild(oCity);
+					oCity.className = "country";
+					oCity.value = "城市";
+				}
+			}
+			oCity.onclick = function(){
+				if(oArea.parentNode != oWrap){
+					oWrap.appendChild(oArea);
+					oArea.className = "country";
+					oArea.value = "区域";
+				}
+			}
+			
+		</script>
+	</body>
+</html>
